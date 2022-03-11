@@ -1,0 +1,22 @@
+package petstoreproject.petstore;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import jdk.management.resource.internal.inst.SocketOutputStreamRMHooks;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+     ApplicationContext context = new ClassPathXmlApplicationContext("springbeans.xml");
+     PetStore store = context.getBean("petStore",PetStore.class);
+     System.out.println(store.getStoreName());
+     System.out.println(store.getAddress());
+     
+    }
+}

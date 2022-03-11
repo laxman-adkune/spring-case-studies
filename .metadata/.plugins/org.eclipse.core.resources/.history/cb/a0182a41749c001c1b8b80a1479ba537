@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="petStore" class="petstoreproject.petstore.PetStore">
+<property name="storeName" value="Happy Pet Store"/>
+<property name="address" value="23 old baker street"/>
+</bean>
+
+<bean id="customer" class="petstoreproject.petstore.Customer">
+<property name="customerName" value="Pramod"/>
+<property name="address" value="N6"/>
+<property name="email" value="pramod@abcd"/>
+</bean>
+</beans>

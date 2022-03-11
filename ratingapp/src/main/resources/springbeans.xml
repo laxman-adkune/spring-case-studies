@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+
+<bean id="user" class="ratingproject.ratingapp.User">
+<property name="username" value="Laxman"/>
+<property name="emailid" value="laxmanadkune@gmail.com"/>
+<property name="password" value="laxman@123"/>
+<property name="mobileno" value="8308868757"/>
+</bean>
+
+
+<bean id="comment" class="ratingproject.ratingapp.Comment">
+<property name="comment_id" value="100"/>
+<property name="comment_text" value="Go for it"/>
+<property name="likes" value="1000"/>
+<property name="dislikes" value="10"/>
+<property name="report" value="false"/>
+</bean>
+
+<bean id="comment1" class="ratingproject.ratingapp.Comment">
+<property name="comment_id" value="2000"/>
+<property name="comment_text" value="Nice"/>
+<property name="likes" value="800"/>
+<property name="dislikes" value="25"/>
+<property name="report" value="false"/>
+</bean>
+
+
+<bean id="financialproduct" class="ratingproject.ratingapp.Financialproduct">
+<property name="financialproductid" value="10"/>
+<property name="financialproduct_name" value="Kurkure"/>
+<property name="description" value="Tasty"/>
+<property name="review" ref="review"/>
+
+<property name="rating" value="50"/>
+
+</bean>
+
+<bean id="review" class="ratingproject.ratingapp.Review">
+
+<property name="reviewid" value="50"/>
+<property name="review_text" value="good"/>
+<property name="financialproduct_reviewed" ref="financialproduct"/>
+
+<property name="comments">
+<list>
+<ref bean="comment"/>
+<ref bean="comment1"/>
+
+</list>
+</property>
+</bean>
+
+
+</beans>

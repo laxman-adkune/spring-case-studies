@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="user" class="onlineshopping.onlineshopapp.User">
+<constructor-arg type="java.lang.String" value="Laxman"/>
+<constructor-arg type="java.lang.String" value="laxman@gamil.com"/>
+<constructor-arg type="java.lang.String" value="laxman123"/>
+<constructor-arg type="java.lang.String" value="Cidco"/>
+<constructor-arg type="java.lang.String" value="Aurangabad"/>
+</bean>
+
+<bean id="user1" class="onlineshopping.onlineshopapp.User">
+<constructor-arg type="java.lang.String" value="Sacin"/>
+<constructor-arg type="java.lang.String" value="sachin@gamil.com"/>
+<constructor-arg type="java.lang.String" value="sachin123"/>
+<constructor-arg type="java.lang.String" value="Avishkar"/>
+<constructor-arg type="java.lang.String" value="Sambhaji Nagar"/>
+</bean>
+
+
+<bean id="product" class="onlineshopping.onlineshopapp.Product">
+<constructor-arg type="java.lang.String" value="Pen"/>
+<constructor-arg type="double" value="15.00"/>
+<constructor-arg type="int" value="10"/>
+<constructor-arg type="java.lang.String" value="C/images"/>
+</bean>
+
+<bean id="product1" class="onlineshopping.onlineshopapp.Product">
+<constructor-arg type="java.lang.String" value="Book"/>
+<constructor-arg type="double" value="20.00"/>
+<constructor-arg type="int" value="50"/>
+<constructor-arg type="java.lang.String" value="C/images"/>
+</bean>
+
+
+
+
+</beans>

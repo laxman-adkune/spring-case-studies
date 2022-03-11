@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.creation">
+		<item value="true" key="use_default_location"/>
+		<item value="C:\Program Files\Java\jdk1.8.0_202" key="java_home"/>
+		<item value="GRADLE_DISTRIBUTION(VERSION(6.0.1))" key="gradle_distribution"/>
+		<item value="C:\Users\Pramod\.gradle" key="gradle_user_home"/>
+		<item value="C:\Users\Pramod\Student\petstoregradleproject" key="project_location"/>
+	</section>
+</section>

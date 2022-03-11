@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+
+<bean id="user" class="ratingproject.ratingapp.User">
+<property name="username" value="Akshata"/>
+<property name="emailid" value="akshatagurupwar@gmail.com"/>
+<property name="password" value="Akshata@2"/>
+<property name="mobileno" value="779865432"/>
+</bean>
+
+
+<bean id="comment" class="ratingproject.ratingapp.Comment">
+<property name="comment_id" value="101"/>
+<property name="comment_text" value="Nice one"/>
+<property name="likes" value="557"/>
+<property name="dislikes" value="26"/>
+<property name="report" value="false"/>
+</bean>
+
+<bean id="comment1" class="ratingproject.ratingapp.Comment">
+<property name="comment_id" value="102"/>
+<property name="comment_text" value="Good one"/>
+<property name="likes" value="675"/>
+<property name="dislikes" value="34"/>
+<property name="report" value="false"/>
+</bean>
+
+
+<bean id="financialproduct" class="ratingproject.ratingapp.Financialproduct">
+<property name="financialproductid" value="1"/>
+<property name="financialproduct_name" value="Biscuit"/>
+<property name="description" value="Very useful product"/>
+<property name="review" ref="review"/>
+
+<property name="rating" value="6"/>
+
+</bean>
+
+<bean id="review" class="ratingproject.ratingapp.Review">
+
+<property name="reviewid" value="45"/>
+<property name="review_text" value="good one"/>
+<property name="financialproduct_reviewed" ref="financialproduct"/>
+
+<property name="comments">
+<list>
+<ref bean="comment"/>
+<ref bean="comment1"/>
+
+</list>
+</property>
+</bean>
+
+
+</beans>

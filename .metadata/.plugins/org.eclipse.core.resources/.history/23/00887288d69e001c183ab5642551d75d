@@ -1,0 +1,60 @@
+package onlineshopping.onlineshopapp;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beandata.xml");
+        
+        System.out.println("----------------User data-------------");
+        User userdata=context.getBean("user",User.class);
+        System.out.println(userdata.getUsername());
+        System.out.println(userdata.getEmail());
+        System.out.println(userdata.getPassword());
+        System.out.println(userdata.getBilling_address());
+        System.out.println(userdata.getShipping_address());
+        
+        System.out.println("----------------Product data-------------");
+        Product productdata = context.getBean("product",Product.class);
+        System.out.println(productdata.getProduct_name());
+        System.out.println(productdata.getPrice());
+        System.out.println(productdata.getQuantity_in_stock());
+        System.out.println(productdata.getImagelocation());
+        
+        Order order = context.getBean("order",Order.class);
+    	List<Cart> cart = order.getCartList();
+    	for(Cart ca:cart) {
+    	System.out.println("User: "+ca.getUser().getUsername());
+    	System.out.println("Email Id: "+ca.getUser().getEmail());
+    	System.out.println("Password: "+ca.getUser().getPassword());
+    	System.out.println("Shipping Address: "+ca.getUser().getShipping_address());
+    	System.out.println("Billing Address: "+ca.getUser().getBilling_address());
+    	
+    	List<Product> productList = ca.getProductList();
+        for(Product p:productList) {
+        	 System.out.println("----------------------------------------------------------------------------");
+        	 System.out.println(p.getProduct_name());
+        	 System.out.println(p.getPrice());
+        	 System.out.println(p.getQuantity_in_stock());
+        	 System.out.println(p.getImagelocation());
+        	 
+        }
+        System.out.println("----------------------------------------------------------------------------");
+        System.out.println("Total Amount: "+ ca.getTotal_amount());
+        System.out.println("Status: "+ca.isStatus());
+        System.out.println("Confirm Order: "+ca.isConfirmorder());
+    	System.out.println("=================================================================================");
+    	
+    	}
+        
+    }
+}

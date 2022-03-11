@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--PetStore class  -->
+<bean id="petStore" class="petstoreproject.petstore.PetStore">
+<property name="storeName" value="Happy Pet Store"/>
+<property name="address" value="23 old baker street"/>
+</bean>
+
+<!--Customer class  -->
+<bean id="customer" class="petstoreproject.petstore.Customer">
+<property name="customerName" value="Pramod"/>
+<property name="address" value="N6"/>
+<property name="email" value="pramod@abcd"/>
+</bean>
+
+<!--Customer class parameter  -->
+<bean id="ncustomer" class="petstoreproject.petstore.Customer">
+<constructor-arg type="java.lang.String" value="Peter"/>
+<constructor-arg type="java.lang.String" value="23 old Street"/>
+<constructor-arg type="java.lang.String" value="pramod@gmail.com"/>
+</bean>
+
+<!--Pet class parameter  -->
+<bean id="pet" class="petstoreproject.petstore.Pet">
+<constructor-arg type="java.lang.String" value="Tiger"/>
+<constructor-arg type="int" value="23"/>
+<constructor-arg type="java.lang.String" value="Danger animal"/>
+</bean>
+
+<bean id="petNumber" class= "petstoreproject.petstore.PetHelpLineService" factory-method="createPetHelpLineServiceInstance" />
+
+
+<!-- Reference -->
+<bean id="petS" class="petstoreproject.petstore.PetService">
+	<constructor-arg ref="petStore"/>
+	<property name="petHelpLineService">
+	<ref bean = "petHelpLineService"/>
+	</property>
+</bean>
+
+</beans>

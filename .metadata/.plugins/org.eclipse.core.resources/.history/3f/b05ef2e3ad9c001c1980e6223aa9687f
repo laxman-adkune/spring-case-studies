@@ -1,0 +1,20 @@
+package petstoreproject.petstore;
+
+public class PetHelpLineService {
+	private String petHelpLineNumber;
+	
+
+	public String getPetHelpLineNumber() {
+		return petHelpLineNumber;
+	}
+
+	private static PetHelpLineService pethelp  = new PetHelpLineService();
+	private	PetHelpLineService()
+	{
+		this.petHelpLineNumber="8390444909";
+	}
+	public static PetHelpLineService createPetHelpLineServiceInstance()
+	{
+		return pethelp;
+	}
+}

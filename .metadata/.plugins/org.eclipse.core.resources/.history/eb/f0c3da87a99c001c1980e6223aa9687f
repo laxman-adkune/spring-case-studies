@@ -1,0 +1,24 @@
+package petstoreproject.petstore;
+
+public class PetService {
+	private PetStore petStore;
+	
+	public PetService() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public PetService(PetStore petStore) {
+		super();
+		this.petStore = petStore;
+	}
+
+	public PetStore getPetStore() {
+		return petStore;
+	}
+
+	public void setPetStore(PetStore petStore) {
+		this.petStore = petStore;
+	}
+	
+}
